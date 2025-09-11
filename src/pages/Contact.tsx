@@ -54,19 +54,19 @@ const Contact = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       title: "Email Us",
-      content: "support@eduplatform.com",
+      content: "support@elearning.com",
       description: "Send us an email anytime"
     },
     {
       icon: <Phone className="w-5 h-5" />,
       title: "Call Us",
-      content: "+91 98765 43210",
+      content: "+91 44 4567 8910",
       description: "Mon-Fri from 9am to 6pm"
     },
     {
       icon: <MapPin className="w-5 h-5" />,
       title: "Visit Us",
-      content: "Mumbai, Maharashtra",
+      content: "Chennai, Tamil Nadu",
       description: "India"
     },
     {

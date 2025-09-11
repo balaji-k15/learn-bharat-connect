@@ -68,7 +68,7 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
     setTimeout(() => {
       toast({
         title: "Account created!",
-        description: "Welcome to EduPlatform. You can now start learning.",
+        description: "Welcome to eLearning. You can now start learning.",
       });
       setIsLoading(false);
       onClose();
@@ -80,7 +80,7 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center">
-            Welcome to <span className="text-primary">EduPlatform</span>
+            Welcome to <span className="text-primary">eLearning</span>
           </DialogTitle>
           <DialogDescription className="text-center">
             Join thousands of students on their learning journey

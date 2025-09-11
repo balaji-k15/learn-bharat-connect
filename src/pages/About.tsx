@@ -87,7 +87,7 @@ const About = () => {
               Empowering Learners <span className="text-accent">Worldwide</span>
             </h1>
             <p className="text-lg text-white/90 mb-8 max-w-3xl mx-auto">
-              Founded in 2020, EduPlatform was created with a simple mission: to make quality 
+              Founded in 2020, eLearning was created with a simple mission: to make quality 
               education accessible to everyone, everywhere. We believe that learning should be 
               engaging, practical, and lead to real career opportunities.
             </p>
@@ -201,7 +201,7 @@ const About = () => {
               Meet the Team
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              The People Behind <span className="text-primary">EduPlatform</span>
+              The People Behind <span className="text-primary">eLearning</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Our passionate team of educators and technologists working to revolutionize online learning

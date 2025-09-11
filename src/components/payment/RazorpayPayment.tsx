@@ -59,7 +59,7 @@ const RazorpayPayment = ({
         key: process.env.REACT_APP_RAZORPAY_KEY_ID || "rzp_test_9999999999", // Demo key
         amount: order.amount,
         currency: order.currency,
-        name: "EduPlatform",
+        name: "eLearning",
         description: `Enrollment for ${courseTitle}`,
         order_id: order.id,
         image: "/favicon.ico",

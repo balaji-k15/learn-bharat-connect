@@ -7,6 +7,8 @@ const Footer = () => {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "Courses", href: "/courses" },
+    { name: "Classes", href: "/classes" },
+    { name: "Team", href: "/team" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
@@ -37,8 +39,8 @@ const Footer = () => {
                 <BookOpen className="h-6 w-6 text-primary-foreground" />
               </div>
               <span className="text-xl font-bold bg-primary-gradient bg-clip-text text-transparent">
-                EduPlatform
-              </span>
+              eLearning
+            </span>
             </Link>
             <p className="text-muted-foreground">
               Empowering learners worldwide with quality education and practical skills for career success.
@@ -117,7 +119,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-medium">Email Us</p>
-                <p className="text-muted-foreground">support@eduplatform.com</p>
+                <p className="text-muted-foreground">support@elearning.com</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -126,7 +128,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-medium">Call Us</p>
-                <p className="text-muted-foreground">+91 98765 43210</p>
+                <p className="text-muted-foreground">+91 44 4567 8910</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -135,7 +137,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-medium">Visit Us</p>
-                <p className="text-muted-foreground">Mumbai, Maharashtra, India</p>
+                <p className="text-muted-foreground">Chennai, Tamil Nadu, India</p>
               </div>
             </div>
           </div>
@@ -145,7 +147,7 @@ const Footer = () => {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-muted-foreground text-center md:text-left">
-              © 2024 EduPlatform. All rights reserved. Made with ❤️ in India.
+              © 2024 eLearning. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               {support.map((item) => (

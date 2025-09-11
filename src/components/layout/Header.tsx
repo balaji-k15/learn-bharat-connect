@@ -12,6 +12,8 @@ const Header = () => {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Courses", href: "/courses" },
+    { name: "Classes", href: "/classes" },
+    { name: "Team", href: "/team" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
@@ -28,7 +30,7 @@ const Header = () => {
               <BookOpen className="h-6 w-6 text-primary-foreground" />
             </div>
             <span className="text-xl font-bold bg-primary-gradient bg-clip-text text-transparent">
-              EduPlatform
+              eLearning
             </span>
           </Link>
 

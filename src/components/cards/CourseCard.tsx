@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Clock, Users, Star, Play } from "lucide-react";
+import VideoModal from "@/components/modals/VideoModal";
+import PaymentModal from "@/components/modals/PaymentModal";
 
 interface CourseCardProps {
   id: string;
@@ -32,6 +35,21 @@ const CourseCard = ({
   category,
   level 
 }: CourseCardProps) => {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+
+  const handlePreview = () => {
+    setIsVideoModalOpen(true);
+  };
+
+  const handleEnrollNow = () => {
+    setIsPaymentModalOpen(true);
+  };
+
+  const handleStartLearning = () => {
+    // This would navigate to the course content page in a real app
+    console.log("Starting learning for course:", title);
+  };
   return (
     <Card className="group course-card overflow-hidden">
       {/* Course Image */}
@@ -49,7 +67,7 @@ const CourseCard = ({
         
         {/* Preview Button */}
         <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <Button size="sm" className="bg-white hover:bg-white/90 text-foreground">
+          <Button size="sm" className="bg-white hover:bg-white/90 text-foreground" onClick={handlePreview}>
             <Play className="w-4 h-4 mr-2" />
             Preview
           </Button>
@@ -101,11 +119,33 @@ const CourseCard = ({
             )}
           </div>
           
-          <Button size="sm" className="bg-primary hover:bg-primary-hover">
+          <Button size="sm" className="bg-primary hover:bg-primary-hover" onClick={handleEnrollNow}>
             Enroll Now
           </Button>
         </div>
       </CardFooter>
+
+      {/* Modals */}
+      <VideoModal
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
+        title={title}
+      />
+      
+      <PaymentModal
+        isOpen={isPaymentModalOpen}
+        onClose={() => setIsPaymentModalOpen(false)}
+        course={{
+          id,
+          title,
+          instructor,
+          price,
+          originalPrice,
+          duration,
+          students,
+          level
+        }}
+      />
     </Card>
   );
 };
