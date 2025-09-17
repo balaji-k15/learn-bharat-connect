@@ -2,11 +2,14 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import LoginModal from "@/components/auth/LoginModal";
-import { Menu, X, BookOpen, User, ShoppingCart } from "lucide-react";
+import UserProfile from "@/components/auth/UserProfile";
+import { useAuth } from "@/contexts/AuthContext";
+import { Menu, X, BookOpen, User } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const { isAuthenticated, user } = useAuth();
   const location = useLocation();
 
   const navigation = [
@@ -53,21 +56,32 @@ const Header = () => {
 
           {/* Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button 
-              variant="ghost" 
-              size="sm"
-              onClick={() => setIsLoginModalOpen(true)}
-            >
-              <User className="h-4 w-4 mr-2" />
-              Login
-            </Button>
-            <Button 
-              size="sm" 
-              className="bg-primary hover:bg-primary-hover"
-              onClick={() => setIsLoginModalOpen(true)}
-            >
-              Get Started
-            </Button>
+            {isAuthenticated ? (
+              <div className="flex items-center space-x-3">
+                <span className="text-sm font-medium text-foreground">
+                  Welcome, {user?.name?.split(' ')[0]}
+                </span>
+                <UserProfile />
+              </div>
+            ) : (
+              <>
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  onClick={() => setIsLoginModalOpen(true)}
+                >
+                  <User className="h-4 w-4 mr-2" />
+                  Login
+                </Button>
+                <Button 
+                  size="sm" 
+                  className="bg-primary hover:bg-primary-hover"
+                  onClick={() => setIsLoginModalOpen(true)}
+                >
+                  Get Started
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -105,28 +119,39 @@ const Header = () => {
                 </Link>
               ))}
               <div className="pt-4 space-y-2">
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
-                  className="w-full justify-start"
-                  onClick={() => {
-                    setIsLoginModalOpen(true);
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  <User className="h-4 w-4 mr-2" />
-                  Login
-                </Button>
-                <Button 
-                  size="sm" 
-                  className="w-full bg-primary hover:bg-primary-hover"
-                  onClick={() => {
-                    setIsLoginModalOpen(true);
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  Get Started
-                </Button>
+                {isAuthenticated ? (
+                  <div className="flex items-center justify-between p-3 bg-muted rounded-md">
+                    <div className="flex items-center space-x-3">
+                      <div className="text-sm font-medium">{user?.name}</div>
+                    </div>
+                    <UserProfile />
+                  </div>
+                ) : (
+                  <>
+                    <Button 
+                      variant="ghost" 
+                      size="sm" 
+                      className="w-full justify-start"
+                      onClick={() => {
+                        setIsLoginModalOpen(true);
+                        setIsMenuOpen(false);
+                      }}
+                    >
+                      <User className="h-4 w-4 mr-2" />
+                      Login
+                    </Button>
+                    <Button 
+                      size="sm" 
+                      className="w-full bg-primary hover:bg-primary-hover"
+                      onClick={() => {
+                        setIsLoginModalOpen(true);
+                        setIsMenuOpen(false);
+                      }}
+                    >
+                      Get Started
+                    </Button>
+                  </>
+                )}
               </div>
             </div>
           </div>

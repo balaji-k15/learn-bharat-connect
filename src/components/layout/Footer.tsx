@@ -147,7 +147,7 @@ const Footer = () => {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-muted-foreground text-center md:text-left">
-              © 2024 eLearning. All rights reserved.
+              © 2025 eLearning. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               {support.map((item) => (

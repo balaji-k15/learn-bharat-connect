@@ -88,8 +88,8 @@ const About = () => {
             </h1>
             <p className="text-lg text-white/90 mb-8 max-w-3xl mx-auto">
               Founded in 2020, eLearning was created with a simple mission: to make quality 
-              education accessible to everyone, everywhere. We believe that learning should be 
-              engaging, practical, and lead to real career opportunities.
+              education accessible to everyone, everywhere. As we enter 2025, we continue to evolve
+              and believe that learning should be engaging, practical, and lead to real career opportunities.
             </p>
           </div>
         </div>

@@ -11,7 +11,9 @@ import {
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/contexts/AuthContext";
 import { Mail, Lock, User, Eye, EyeOff } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -20,8 +22,9 @@ interface LoginModalProps {
 
 const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
   const { toast } = useToast();
+  const { login, signup, isLoading } = useAuth();
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   
   const [loginForm, setLoginForm] = useState({
     email: "",
@@ -37,17 +40,22 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      await login(loginForm.email, loginForm.password);
       toast({
         title: "Welcome back!",
         description: "You have successfully logged in.",
       });
-      setIsLoading(false);
       onClose();
-    }, 1000);
+      navigate('/courses');
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to log in. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleSignup = async (e: React.FormEvent) => {
@@ -62,17 +70,21 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
       return;
     }
     
-    setIsLoading(true);
-    
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      await signup(signupForm.name, signupForm.email, signupForm.password);
       toast({
         title: "Account created!",
         description: "Welcome to eLearning. You can now start learning.",
       });
-      setIsLoading(false);
       onClose();
-    }, 1000);
+      navigate('/courses');
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to create account. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (

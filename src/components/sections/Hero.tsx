@@ -1,8 +1,23 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Play, Users, Star, BookOpen } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
+import LoginModal from "@/components/auth/LoginModal";
 
 const Hero = () => {
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+
+  const handleStartLearning = () => {
+    if (isAuthenticated) {
+      navigate('/courses');
+    } else {
+      setIsLoginModalOpen(true);
+    }
+  };
+
   return (
     <section className="hero-section bg-hero-gradient text-white relative overflow-hidden">
       {/* Background decorations */}
@@ -33,7 +48,11 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
+              <Button 
+                size="lg" 
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
+                onClick={handleStartLearning}
+              >
                 <Play className="w-5 h-5 mr-2" />
                 Start Learning Now
               </Button>
@@ -101,6 +120,11 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      <LoginModal 
+        isOpen={isLoginModalOpen} 
+        onClose={() => setIsLoginModalOpen(false)} 
+      />
     </section>
   );
 };
