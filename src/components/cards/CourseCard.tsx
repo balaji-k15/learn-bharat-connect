@@ -19,6 +19,7 @@ interface CourseCardProps {
   image: string;
   category: string;
   level: string;
+  videoUrl?: string;
 }
 
 const CourseCard = ({ 
@@ -33,7 +34,8 @@ const CourseCard = ({
   originalPrice, 
   image, 
   category,
-  level 
+  level,
+  videoUrl 
 }: CourseCardProps) => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
@@ -130,6 +132,7 @@ const CourseCard = ({
         isOpen={isVideoModalOpen}
         onClose={() => setIsVideoModalOpen(false)}
         title={title}
+        videoUrl={videoUrl}
       />
       
       <PaymentModal

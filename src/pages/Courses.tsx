@@ -55,7 +55,7 @@ const Courses = () => {
   const courses = [
     {
       id: "1",
-      title: "Complete Web Development Bootcamp 2024",
+      title: "Complete Web Development Bootcamp 2025",
       description: "Learn HTML, CSS, JavaScript, React, Node.js and become a full-stack developer. Build real-world projects and get job-ready skills.",
       instructor: "Vikash Gupta",
       duration: "40 hours",
@@ -65,7 +65,8 @@ const Courses = () => {
       originalPrice: 5999,
       image: courseWebDev,
       category: "Web Development",
-      level: "Beginner"
+      level: "Beginner",
+      videoUrl: "https://www.youtube.com/embed/HcOc7P5BMi4"
     },
     {
       id: "2",
@@ -79,7 +80,8 @@ const Courses = () => {
       originalPrice: 6999,
       image: courseDataScience,
       category: "Data Science",
-      level: "Intermediate"
+      level: "Intermediate",
+      videoUrl: "https://www.youtube.com/embed/rfscVS0vtbw"
     },
     {
       id: "3",
@@ -93,7 +95,8 @@ const Courses = () => {
       originalPrice: 3999,
       image: courseMarketing,
       category: "Marketing",
-      level: "Beginner"
+      level: "Beginner",
+      videoUrl: "https://www.youtube.com/embed/YQHsXMglC9A"
     },
     {
       id: "4",
@@ -107,7 +110,8 @@ const Courses = () => {
       originalPrice: 7999,
       image: courseUIDesign,
       category: "Mobile Development",
-      level: "Intermediate"
+      level: "Intermediate",
+      videoUrl: "https://www.youtube.com/embed/0-S5a0eXPoc"
     },
     {
       id: "5",
@@ -121,7 +125,8 @@ const Courses = () => {
       originalPrice: 4999,
       image: courseUIDesign,
       category: "Design",
-      level: "Beginner"
+      level: "Beginner",
+      videoUrl: "https://www.youtube.com/embed/c9Wg6Cb_YlU"
     },
     {
       id: "6",
@@ -135,7 +140,8 @@ const Courses = () => {
       originalPrice: 5599,
       image: courseJavaScript,
       category: "Web Development",
-      level: "Advanced"
+      level: "Advanced",
+      videoUrl: "https://www.youtube.com/embed/WKFIDZeq9mw"
     },
     {
       id: "7",
@@ -149,7 +155,8 @@ const Courses = () => {
       originalPrice: 4399,
       image: coursePython,
       category: "Programming",
-      level: "Beginner"
+      level: "Beginner",
+      videoUrl: "https://www.youtube.com/embed/_uQrJ0TkZlc"
     },
     {
       id: "8",
@@ -163,7 +170,8 @@ const Courses = () => {
       originalPrice: 9999,
       image: courseWebDev,
       category: "Web Development",
-      level: "Advanced"
+      level: "Advanced",
+      videoUrl: "https://www.youtube.com/embed/7CqJlxBYj-M"
     },
     {
       id: "9",
@@ -177,7 +185,8 @@ const Courses = () => {
       originalPrice: 8999,
       image: courseDataScience,
       category: "Data Science",
-      level: "Advanced"
+      level: "Advanced",
+      videoUrl: "https://www.youtube.com/embed/GwIo3gDZCVQ"
     },
     {
       id: "10",
@@ -191,7 +200,8 @@ const Courses = () => {
       originalPrice: 4599,
       image: courseWebDev,
       category: "Web Development",
-      level: "Intermediate"
+      level: "Intermediate",
+      videoUrl: "https://www.youtube.com/embed/O79pJ7qXwoE"
     },
     {
       id: "11",
@@ -205,7 +215,8 @@ const Courses = () => {
       originalPrice: 3599,
       image: courseMarketing,
       category: "Marketing",
-      level: "Beginner"
+      level: "Beginner",
+      videoUrl: "https://www.youtube.com/embed/xVVEL0f_6QI"
     },
     {
       id: "12",
@@ -219,7 +230,8 @@ const Courses = () => {
       originalPrice: 7599,
       image: courseUIDesign,
       category: "Mobile Development",
-      level: "Intermediate"
+      level: "Intermediate",
+      videoUrl: "https://www.youtube.com/embed/1gDhl4leEzA"
     },
     {
       id: "13",
@@ -233,7 +245,8 @@ const Courses = () => {
       originalPrice: 4399,
       image: courseUIDesign,
       category: "Design",
-      level: "Beginner"
+      level: "Beginner",
+      videoUrl: "https://www.youtube.com/embed/MpigBU4Ek5E"
     },
     {
       id: "14",
@@ -247,7 +260,8 @@ const Courses = () => {
       originalPrice: 8599,
       image: courseWebDev,
       category: "Web Development",
-      level: "Advanced"
+      level: "Advanced",
+      videoUrl: "https://www.youtube.com/embed/hQcFE0RD0cQ"
     },
     {
       id: "15",
@@ -261,7 +275,8 @@ const Courses = () => {
       originalPrice: 10999,
       image: courseDataScience,
       category: "Blockchain",
-      level: "Advanced"
+      level: "Advanced",
+      videoUrl: "https://www.youtube.com/embed/M576WGiDBdQ"
     },
     {
       id: "16",
@@ -275,7 +290,8 @@ const Courses = () => {
       originalPrice: 3199,
       image: courseMarketing,
       category: "Marketing",
-      level: "Beginner"
+      level: "Beginner",
+      videoUrl: "https://www.youtube.com/embed/S0kQpV-jgQU"
     },
     {
       id: "17",
@@ -289,7 +305,8 @@ const Courses = () => {
       originalPrice: 8399,
       image: courseUIDesign,
       category: "Mobile Development",
-      level: "Advanced"
+      level: "Advanced",
+      videoUrl: "https://www.youtube.com/embed/comQ1-x2a1Q"
     },
     {
       id: "18",
@@ -303,7 +320,8 @@ const Courses = () => {
       originalPrice: 6599,
       image: coursePython,
       category: "Cybersecurity",
-      level: "Intermediate"
+      level: "Intermediate",
+      videoUrl: "https://www.youtube.com/embed/U_P23SqJaDc"
     }
   ];
 
