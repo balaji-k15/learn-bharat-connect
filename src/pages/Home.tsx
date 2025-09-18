@@ -22,7 +22,7 @@ const Home = () => {
   const featuredCourses = [
     {
       id: "1",
-      title: "Complete Web Development Bootcamp 2024",
+      title: "Complete Web Development Bootcamp 2025",
       description: "Learn HTML, CSS, JavaScript, React, Node.js and become a full-stack developer",
       instructor: "Rahul Sharma",
       duration: "40 hours",
@@ -30,13 +30,14 @@ const Home = () => {
       rating: 4.8,
       price: 2999,
       originalPrice: 5999,
-      image: "/api/placeholder/400/300",
+      image: "/src/assets/course-web-dev.jpg",
       category: "Web Development",
-      level: "Beginner"
+      level: "Beginner",
+      videoUrl: "https://www.youtube.com/embed/qz0aGYrrlhU"
     },
     {
       id: "2", 
-      title: "Python for Data Science & Machine Learning",
+      title: "Python for Data Science & Machine Learning 2025",
       description: "Master Python programming and build real-world data science projects",
       instructor: "Priya Patel",
       duration: "35 hours",
@@ -44,13 +45,14 @@ const Home = () => {
       rating: 4.9,
       price: 3499,
       originalPrice: 6999,
-      image: "/api/placeholder/400/300",
+      image: "/src/assets/course-python.jpg",
       category: "Data Science",
-      level: "Intermediate"
+      level: "Intermediate",
+      videoUrl: "https://www.youtube.com/embed/_uQrJ0TkZlc"
     },
     {
       id: "3",
-      title: "Digital Marketing Mastery Course",
+      title: "Digital Marketing Mastery Course 2025",
       description: "Learn SEO, Social Media, Google Ads, and grow your business online",
       instructor: "Amit Kumar",
       duration: "25 hours", 
@@ -58,9 +60,10 @@ const Home = () => {
       rating: 4.7,
       price: 1999,
       originalPrice: 3999,
-      image: "/api/placeholder/400/300",
+      image: "/src/assets/course-marketing.jpg",
       category: "Marketing",
-      level: "Beginner"
+      level: "Beginner",
+      videoUrl: "https://www.youtube.com/embed/bixR-KIJKYM"
     }
   ];
 
@@ -211,13 +214,17 @@ const Home = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary-hover">
-                <BookOpen className="w-5 h-5 mr-2" />
-                Start Learning Now
-              </Button>
-              <Button size="lg" variant="outline">
-                View Pricing Plans
-              </Button>
+              <Link to="/courses">
+                <Button size="lg" className="bg-primary hover:bg-primary-hover">
+                  <BookOpen className="w-5 h-5 mr-2" />
+                  Start Learning Now
+                </Button>
+              </Link>
+              <Link to="/courses">
+                <Button size="lg" variant="outline">
+                  View Pricing Plans
+                </Button>
+              </Link>
             </div>
 
             <div className="flex items-center justify-center space-x-6 mt-8 text-sm text-muted-foreground">
